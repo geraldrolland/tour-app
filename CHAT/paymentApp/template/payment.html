@@ -1,0 +1,135 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .city-flex {
+    display: flex;
+    margin-top: 15px;
+    max-width: 50%;
+    height: 500px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.city-flex > div{
+    width: 80%;
+    height: 500px;
+    background-size: cover;
+    filter: drop-shadow(0 0 10px #c4bbf0);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.city-flex > div > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transform: none;
+    transition: 0.5s;
+}
+
+.city-flex > div > div:first-child:hover {
+    transform: scale(1.1);
+}
+
+.desc {
+    display: flex;
+    position: relative;
+    z-index: 5px;
+    width: 50%;
+    height: 80%;
+    flex-direction: column;
+    position: relative;
+    bottom: 100%;
+    margin-top: 50%;
+}
+
+.desc > div:nth-child(1) {
+    width: 40%;
+    height: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
+.desc > div:nth-child(2) {
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+    text-align: justify;
+}
+.desc > div:nth-child(3) {
+    width: 30%;
+    height: 10%;
+    border: 2px solid #fcfcfc;
+    color: #f5ff8d;
+    margin-left: 60%;
+    font-size: larger;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 50px;
+    padding: 8px;
+    transition: 0.5s;
+}
+
+.desc > div:nth-child(3):hover {
+    background-color: #fdea2e;
+    border: none;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.paypal-container {
+    display: flex;
+    width: 800px;
+    height: 90px;
+    padding-left: 55px;
+    margin-top: 10px;
+}
+
+</style>
+<body>
+    <div class="container">
+    <div class="city-flex">
+    <div>
+        <div style="background-image: url(/{{city.city_poster}});"></div>
+        <div class="desc">
+            
+            <div>{{city.name}}</div>
+            <div>{{city.description}}</div>
+            <div>${{city.tourist_price}}</div>
+            
+        </div>
+    </div>
+    </div>
+    <div class="paypal-container">
+    <input id="course-id" name="city_id"  value={{city.city_id}} hidden style="display: none;"/>      
+    <div id="paypal-button-container"></div>
+    </div>
+    </div>
+</body>
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</html>
+    
+    

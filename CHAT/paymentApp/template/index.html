@@ -1,0 +1,93 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li onclick="changeUrl()">explore</li><span></span>
+                    <li>book</li><span></span>
+                    <li>experience</li><span></span>
+                    <li>about us</li><span></span>
+                    <li>contact</li><span></span>
+                    <li>help</li><span></span>
+                </ul>
+            </div>
+        </div>
+        <div class="account">
+            <div class="icon"></div>
+            <div>signup</div>
+            <div>login</div>
+        </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="flex-container">
+            <div style="background-image: url(../static/images/jeshoots-com-mSESwdMZr-A-unsplash.jpg);"><span></span></div>
+            <div style="background-image: url(../static/images/safari\ \(3\).jpg); background-position: 0;"><span></span></div>
+            <div style="background-image: url(../static/images/safari\ \(11\).jpg)"><span></span></div>
+            <div style="background-image: url(../static/images/safari\ \(13\).jpg);"><span></span></div>
+        </div>
+    </div>
+
+    <div class="book-now"><div>book now</div><span></span></div>
+    <div class="greeting">welcome</div>
+    <div class="travel-desc">
+        <div>
+        <div></div>
+        <div style="color: #000000">
+            <h2>Dubai</h2>
+            Dubai dazzles with futuristic skyscrapers, 
+            luxury shopping, and desert adventures. Explore 
+            iconic landmarks like Burj Khalifa, indulge in 
+            world-class cuisine, 
+            and experience Arabian hospitality at its finest
+        </div>
+        <div style="color: #fafafa;">
+            <h2>Mauritius</h2>
+            Mauritius captivates with its turquoise waters, white sandy beaches, 
+            and vibrant coral reefs. Dive into its rich culture, enjoy water sports, 
+            and savor exquisite Creole cuisine in paradise.
+        </div>
+        <div style="color: #f2f9f1;">
+            <h2>Bangkok</h2>
+            Bangkok's cuisine is a tantalizing fusion of flavors, 
+            from aromatic street food like pad Thai and mango sticky 
+            rice to fine dining with royal Thai delicacies, 
+            offering a culinary journey like no other.
+        </div>
+        </div>
+    </div>
+   
+</body>
+
+<script>
+    const icon = document.getElementById("icon")
+    const userBar = document.getElementById("account-bar")
+    var flag = 0
+
+    icon.onclick = () => {
+        if (flag === 0) {
+            userBar.style.transform = "translateX(0)"
+            flag++;
+        } else {
+            userBar.style.transform = "translateX(300px)"
+            flag--;
+        }
+    }
+
+    function changeUrl() {
+        let currentURL = window.location.href + "explore/"
+        window.location.href = currentURL
+
+    }
+</script>
+</html>

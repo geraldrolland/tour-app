@@ -1,0 +1,21 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href='{% static "css/login.css" %}'>
+</head>
+<body>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="enter email" class="email" name="email" autofocus required>
+        <input type="text" placeholder="enter password" class="password" name="password" required>
+        <small style="color: red;">{{wrongEmailPassword}}</small>
+        <div class="div1"><a href="">forgot password</a></div>
+        <div class="div2">don't have an account? <a href="{% url 'sign_up' %}">signup</a></div>
+        <button type="submit">login</button>
+    </form>
+</body>
+</html>

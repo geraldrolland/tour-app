@@ -1,0 +1,252 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    max-width: 100%;
+    height: 200px;
+    position: sticky;
+    position: -webkit-sticky;
+    margin: auto;
+    align-items: center;
+    border: 1px solid #fcfefe;
+    background-color: rgb(160, 219, 219, 0.8);
+    z-index: 10;
+}
+
+.header > div:nth-child(1) {
+    display: flex;
+    height: 150px;
+    width: 1000px;
+    align-items: center;
+}
+
+.header > div:last-child {
+    width: calc(100% - 1000px);
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.header > div:last-child > div {
+    width: 50px;
+    height: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: capitalize;
+    color: #e3f6f5;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.header > div:last-child > div:nth-child(2) {
+    border-right: 1px solid white;
+
+}
+
+.header > div:last-child > div:nth-child(3) {
+    border-left: 1px solid white;
+    padding-left: 5px;
+}
+.header > div:last-child > div:nth-child(3):hover,
+.header > div:last-child > div:nth-child(2):hover  {
+    cursor: pointer;
+    color: #706c61;
+}
+.header > div:last-child > div:first-child {
+    width: 30px;
+    background-color: #f7f7f7;
+    mask-image: url(../static/images/profile-user.png);
+    mask-size: cover;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    mask-image: url("../static/images/travel-agent-trip-planner-logo-travel-b449d3a02b42208b956c0fca638e2498.png");
+    mask-size: cover;
+    margin-left: 10px;
+    box-shadow: 0 0 10px #ececec;
+    background-color: #ff5d9e;
+
+}
+
+.nav {
+    width: calc(100% - 150px);
+    height: 50px;
+}
+
+.nav ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    font-size: medium;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 0.5px;
+    border-radius: 15px;
+    border-bottom: 1px solid black;
+    color: #e3f6f5;
+    box-shadow: 0 0 2px #303841;
+    position: relative;
+    z-index: 5;
+    margin-right: -140px;
+    transition: 0.5s;
+
+
+}
+
+
+
+ul > span {
+    width: 100px;
+    height: 30px;
+    background-color: #475053;
+    position: relative;
+    border-radius: 2.5px;
+    margin-bottom: px;
+    transform-origin: center;
+    transform: scaleX(0.05) scaleY(0.15);
+    margin-bottom: 50px;
+    border-radius: none;
+    transition: 0.5s;
+}
+
+li:hover {
+    color: #f8fcfb;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+}
+
+li:hover + span {
+margin-top: 50px;
+transform: scaleX(1) scaleY(1);
+border-radius: 15px;
+cursor: pointer;
+}
+
+.city-flex {
+    display: flex;
+    margin-top: 15px;
+    max-width: 100%;
+    height: 1280px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.city-flex > div{
+    width: 30%;
+    height: 420px;
+    background-size: cover;
+    filter: drop-shadow(0 0 10px #c4bbf0);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.city-flex > div > div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transform: none;
+    transition: 0.5s;
+}
+
+.city-flex > div > div:first-child:hover {
+    transform: scale(1.1);
+}
+
+.desc {
+    display: flex;
+    position: relative;
+    z-index: 5px;
+    width: 50%;
+    height: 40%;
+    flex-direction: column;
+    position: relative;
+    bottom: 100%;
+    margin-top: 50%;
+}
+
+.desc > div:nth-child(1) {
+    width: 40%;
+    height: 10%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: large;
+    text-transform: capitalize;
+    padding-left: 10px;
+}
+
+.desc > div:nth-child(2) {
+    width: 100%;
+    height: 30%;
+    padding: 20px;
+    text-align: justify;
+}
+.desc > div:nth-child(3) {
+    width: 30%;
+    height: 10%;
+    border: 2px solid #fcfcfc;
+    color: #f5ff8d;
+    margin-left: 60%;
+    font-size: larger;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 50px;
+    padding: 8px;
+    transition: 0.5s;
+}
+
+.desc > div:nth-child(3):hover {
+    background-color: #fdea2e;
+    border: none;
+    color: #fcfcfc;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    margin-top: 20px;
+    max-width: 100%;
+    height: 500px;
+    background-color: #393e46;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer > div {
+    width: 33%;
+    height: 80%;
+    border-left: 1px solid white;
+}
+
+.footer > div:first-child {
+    background-color: #ff5d9e;
+    mask-image: url("../static/images/travel-agent-trip-planner-logo-travel-b449d3a02b42208b956c0fca638e2498.png");
+    mask-size: 350px 350px;
+    mask-repeat: no-repeat;
+
+}

@@ -1,0 +1,52 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/explore.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="logo"></div>
+            <div class="nav">
+                <ul>
+                    <li>explore</li><span></span>
+                    <li>book</li><span></span>
+                    <li>experience</li><span></span>
+                    <li>about us</li><span></span>
+                    <li>contact</li><span></span>
+                    <li>help</li><span></span>
+                </ul>
+            </div>
+        </div>
+        <div class="account">
+            <div class="icon"></div>
+            <div>signup</div>
+            <div>login</div>
+        </div>
+        </div>
+    </div>
+    <div class="city-flex">
+        {% for city in cities  %}
+    <div>
+        <div style="background-image: url(../{{city.city_poster}});"></div>
+        <div class="desc">
+            
+            <div>{{city.name}}</div>
+            <div>{{city.description}}</div>
+            <div><a href="/paypal/pay/{{city.city_id}}/" style="text-decoration: none; color: none;">${{city.tourist_price}}</a></div>
+            
+        </div>
+    </div>
+    {% endfor %}
+    </div>
+    <div class="footer">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
